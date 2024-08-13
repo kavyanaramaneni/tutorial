@@ -43,3 +43,10 @@ public class Lists {
     }
     
 }
+/* 
+Input:
+1
+3 2
+2 3 1
+output:
+3*/
