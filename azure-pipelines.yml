@@ -5,6 +5,7 @@
 
 trigger:
 - main
+- master
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -20,5 +21,14 @@ steps:
     scriptLocation: 'inlineScript'
     inlineScript: |
       echo "Performing queue operations..."
-      # Add additional CLI commands if working with Azure resources
+      # Add Azure-specific CLI commands here, for example:
+      # az servicebus namespace create --resource-group <ResourceGroupName> --name <NamespaceName> --location <Location>
+      # az servicebus queue create --resource-group <ResourceGroupName> --namespace-name <NamespaceName> --name <QueueName>
 
+- script: echo "Hello, world!"
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo "Add other tasks to build, test, and deploy your project."
+    echo "See https://aka.ms/yaml for more examples and details."
+  displayName: 'Run a multi-line script'
