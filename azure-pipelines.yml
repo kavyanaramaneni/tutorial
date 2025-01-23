@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo "Message Queued: Pipeline triggered successfully!"
+  displayName: 'Queue Message'
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: '<AzureSubscriptionServiceConnection>'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      echo "Performing queue operations..."
+      # Add additional CLI commands if working with Azure resources
+
